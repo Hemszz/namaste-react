@@ -1,0 +1,35 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "This is namaster react by Akshay Saini",
+  "keywords": [
+    "react",
+    "hemszzReact"
+  ],
+  "homepage": "https://github.com/Hemszz/namaste-react#readme",
+  "bugs": {
+    "url": "https://github.com/Hemszz/namaste-react/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hemszz/namaste-react.git"
+  },
+  "license": "ISC",
+  "author": "Hemanth Hemszz",
+  "type": "commonjs",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.0"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "browserslist": [
+    "last 5 chrome versions"
+  ]
+}
