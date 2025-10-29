@@ -1,17 +1,22 @@
 const RestaurantCard = (props) => {
     const { resObj } = props;
-    const { name, cusines, rating, address } = resObj;
+    const CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264/";
     const styleCard = {
         backgroundColor: '#f0f0f0',
     }
-    
+    const styleImage = {
+        width: '100%',
+        height: '100px',
+        objectFit: 'cover',
+    }
+
     return (
         <div className="restaurant-card" style={styleCard}>
-            <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" />
-            <p>{name}</p>
-            <p>{cusines}</p>
-            <p>{rating}</p>
-            <p>{address}</p>
+            <img className="restaurant-image" src={CDN_URL + resObj?.cloudinaryImageId} alt={resObj?.name} style={styleImage}/>
+            <p>{resObj?.name}</p>
+            <p>{resObj?.cuisines?.join(", ")}</p>
+            <p>{resObj?.avgRating}</p>
+            <p>{resObj?.locality}</p>
         </div>
     )
 }
