@@ -12,19 +12,16 @@ const Body = () => {
     }, []);
 
     const fetchData = async () => {
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.8452145&lng=77.6601695&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+        //const data = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.8452145&lng=77.6601695&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`);
+        const data = await fetch(`https://namastedev.com/api/v1/listRestaurants`);
         const json = await data.json();
-        const restaurants = json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+        const restaurants = json?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
         setListOfRestaurants(restaurants);
         setFilteredRestaurantList(restaurants);
         console.log(json);
     }
 
-    if(listOfRestaurants?.length === 0) {
-        return <Shimmer />;
-    }
-
-    return (
+    return  listOfRestaurants?.length === 0 ? <Shimmer /> : (
         <div className="body">
             <div className="filter">
                 <div className="search">
